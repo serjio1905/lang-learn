@@ -1,0 +1,61 @@
+<div class="row" style="margin-top:25px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <form class="card" action="registration" method="post">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="input-login">Login</label>
+            <input name="login" type="text" class="form-control" id="input-login" placeholder="Enter Login">
+          </div>
+          <div class="form-group">
+            <label for="input-name">Name</label>
+            <input name="name" type="text" class="form-control" id="input-name" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="password1">Password</label>
+            <input name="pass" type="password" class="form-control" id="password1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="password2">Password</label>
+            <input type="password" class="form-control" id="password2" placeholder="Enter password again">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+   $("#password2").keyup(function (){
+    var p1 = $("#password1").val();
+    var p2 = $("#password2").val();
+    comparePasswords(p1, p2)
+                        });
+    
+    $("#password1").keyup(function (){
+    var p1 = $("#password1").val();
+    var p2 = $("#password2").val();
+    comparePasswords(p1, p2)
+                        });
+    
+    function comparePasswords(p1, p2) {
+        if((p1 != p2 && p2 != "") || (p1.length < 5 && p1.length > 0 && p1 != p2)) {
+            if ($("#password2").hasClass("border-danger") == false) {
+                $("#password2").addClass("border-danger");
+                $("#password1").addClass("border-danger");
+            }
+        } else {
+            $("#password2").removeClass("border-danger");
+            $("#password1").removeClass("border-danger");
+        }
+    }
+</script>

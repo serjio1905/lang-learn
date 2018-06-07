@@ -1,0 +1,26 @@
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link
+
+<% if (page == "/main") {%> active<% } %>
+
+          " href="<%= config.root %>/" id="begin">Начать</a>
+          <a class="nav-item nav-link
+
+<% if (page == "/dictionary") {%> active<% } %>
+
+          " href="<%= config.root %>/dictionary" id="dictionary">Словарь</a>
+          <a class="nav-item nav-link
+
+<% if (page == "/auth") {%> active<% } %>
+
+          " href="<%= config.root %>/auth" id="authorization">Вход</a>
+        </div>
+      </div>
+</nav>

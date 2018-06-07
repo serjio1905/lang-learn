@@ -1,0 +1,7 @@
+{
+  "root" : "",
+  "appName" : "Language Learning",
+  "port" : 3000,
+  "dbName" : "learn_hebrew",
+  "dbPswd" : "111"
+}
