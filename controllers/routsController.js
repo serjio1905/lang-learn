@@ -34,6 +34,7 @@ module.exports = function(app) {
   app.delete('/' + config.root, function(req, res) {
 
   });
+  // managing registration post data
   app.post('/registration' + config.root, function(req, res) {
     res.writeHead(200, {'Content-Type' : 'text/html'});
     res.write(req.path);
@@ -45,7 +46,7 @@ module.exports = function(app) {
     res.end();
   });
   app.get('*', function(req, res) {
-    res.status(404).render('parts/404.ejs');
+    res.status(404).render('main-page.ejs', {"config" : config, "page" : "404"});
   });
 };
 
@@ -53,8 +54,8 @@ var sendEmail = function(emailAdr, sbj, txt) {
   var transporter = email.createTransport({
   service: 'gmail',
   auth: {
-    user: 'learnhebrew1234@gmail.com',
-    pass: 'TelRan2018`'
+    user: 'config.email',
+    pass: 'config.emailPass'
   }
   });
   var mailOptions = {

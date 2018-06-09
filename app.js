@@ -7,7 +7,7 @@ var app = express();
 // const { sanitizeBody } = require('express-validator/filter');
 app.set('view-engine', 'ejs');
 // app.use(express.static('./assets'));
-app.use('./assets', express.static('assets'));
+app.use('/assets', express.static('assets'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
